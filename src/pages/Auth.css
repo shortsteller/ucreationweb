@@ -1,0 +1,25 @@
+.auth-page { min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; background: linear-gradient(135deg, var(--color-bg), var(--color-bg-alt)); }
+.auth-container { width: 100%; max-width: 440px; }
+.auth-card { background: var(--color-white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--color-border); }
+.auth-header { text-align: center; margin-bottom: 30px; }
+.auth-logo { display: inline-flex; flex-direction: column; align-items: center; margin-bottom: 20px; }
+.auth-header h1 { font-size: 1.5rem; margin-bottom: 6px; }
+.auth-header p { font-size: 0.88rem; color: var(--color-text-muted); }
+.auth-field { position: relative; margin-bottom: 16px; }
+.field-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 1rem; }
+.auth-field input { width: 100%; padding: 14px 14px 14px 42px; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.92rem; }
+.auth-field input:focus { border-color: var(--color-secondary); }
+.toggle-password { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; color: var(--color-text-muted); font-size: 1rem; }
+.auth-options { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 0.82rem; }
+.remember-me { display: flex; align-items: center; gap: 6px; color: var(--color-text-light); cursor: pointer; }
+.remember-me input { accent-color: var(--color-secondary); }
+.forgot-password { color: var(--color-secondary); font-weight: 500; }
+.auth-submit { width: 100%; }
+.auth-divider { text-align: center; margin: 20px 0; position: relative; }
+.auth-divider::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--color-border); }
+.auth-divider span { background: var(--color-white); padding: 0 16px; font-size: 0.82rem; color: var(--color-text-muted); position: relative; }
+.google-btn { width: 100%; justify-content: center; }
+.google-btn svg { font-size: 1.2rem; }
+.auth-switch { text-align: center; margin-top: 20px; font-size: 0.85rem; color: var(--color-text-muted); }
+.auth-switch a { color: var(--color-secondary); font-weight: 600; }
+
