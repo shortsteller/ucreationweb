@@ -9,3 +9,20 @@
 .success-message { font-size: 0.88rem; color: var(--color-text-light); margin-bottom: 28px; line-height: 1.7; }
 .success-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
+@media (max-width: 480px) {
+  .order-success-page {
+    padding: 24px 14px 80px;
+  }
+  .success-card {
+    padding: 30px 18px;
+    border-radius: var(--radius-md);
+  }
+  .success-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .success-actions .btn {
+    width: 100%;
+  }
+}
+

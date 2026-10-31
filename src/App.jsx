@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Layout/Header'
 import Footer from './components/Layout/Footer'
 import AnnouncementBar from './components/Layout/AnnouncementBar'
+import BottomNav from './components/Layout/BottomNav'
+import SearchModal from './components/Common/SearchModal'
 import Home from './pages/Home'
 import Shop from './pages/Shop'
 import ProductDetail from './pages/ProductDetail'
@@ -21,11 +24,14 @@ import ScrollToTop from './components/Common/ScrollToTop'
 import './App.css'
 
 function App() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+
   return (
     <div className="app">
       <ScrollToTop />
       <AnnouncementBar />
-      <Header />
+      <Header isSearchOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
+      
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -47,7 +53,10 @@ function App() {
           <Route path="/policies/:type" element={<Policies />} />
         </Routes>
       </main>
+
       <Footer />
+      <BottomNav onOpenSearch={() => setIsSearchOpen(true)} />
+      {isSearchOpen && <SearchModal onClose={() => setIsSearchOpen(false)} />}
     </div>
   )
 }

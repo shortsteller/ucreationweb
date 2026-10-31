@@ -173,12 +173,55 @@
 @media (max-width: 900px) {
   .policies-layout {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
+    margin-top: 20px;
   }
   .policies-sidebar {
     position: static;
   }
+  .policies-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-md);
+    padding: 6px;
+    gap: 6px;
+    scrollbar-width: none;
+  }
+  .policies-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .policy-nav-link {
+    border-bottom: none;
+    border-radius: var(--radius-sm);
+    padding: 8px 14px;
+    font-size: 0.84rem;
+    flex-shrink: 0;
+  }
+  .policy-nav-link:hover {
+    padding-left: 14px;
+  }
+  .sidebar-support-card {
+    display: none;
+  }
   .policies-main-content {
-    padding: 24px;
+    padding: 24px 18px;
+    border-radius: var(--radius-md);
   }
 }
+
+@media (max-width: 480px) {
+  .policies-hero {
+    padding: 30px 0 24px;
+  }
+  .hero-icon-bubble {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+  }
+  .policy-block h3 {
+    font-size: 1.05rem;
+  }
+}
+

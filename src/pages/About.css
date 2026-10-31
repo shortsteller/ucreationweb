@@ -18,5 +18,15 @@
 .value-icon { font-size: 2rem; display: block; margin-bottom: 12px; }
 .value-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .value-card p { font-size: 0.85rem; }
-@media (max-width: 768px) { .about-grid, .about-grid.reverse { grid-template-columns: 1fr; direction: ltr; gap: 24px; } .values-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+  .about-grid, .about-grid.reverse { grid-template-columns: 1fr; direction: ltr; gap: 24px; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .about-section { padding: 40px 0; }
+  .about-values { padding: 40px 0; }
+}
+
+@media (max-width: 480px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .value-card { padding: 20px 16px; }
+}
 

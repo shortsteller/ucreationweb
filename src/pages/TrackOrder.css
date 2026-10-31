@@ -365,3 +365,26 @@
     text-align: center;
   }
 }
+
+@media (max-width: 480px) {
+  .track-content-wrapper {
+    margin-top: -10px;
+  }
+  .track-search-card {
+    padding: 20px 16px;
+    margin-bottom: 18px;
+    border-radius: var(--radius-md);
+  }
+  .track-result-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
+  }
+  .track-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .courier-badge {
+    width: 100%;
+  }
+}
+

@@ -217,6 +217,23 @@ export default function ProductDetail() {
           </section>
         )}
       </div>
+
+      {/* Mobile Sticky Add to Cart Bar */}
+      <div className="mobile-sticky-action-bar">
+        <div className="sticky-bar-info">
+          <img src={product.images[0]} alt={product.name} />
+          <div>
+            <p className="sticky-bar-title">{product.name}</p>
+            <span className="sticky-bar-price">₹{product.price.toLocaleString()}</span>
+          </div>
+        </div>
+        <button
+          className="btn btn-primary btn-sm sticky-bar-btn"
+          onClick={() => addToCart(product, quantity)}
+        >
+          <FiShoppingBag /> Add
+        </button>
+      </div>
     </div>
   )
 }

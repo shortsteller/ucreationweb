@@ -202,6 +202,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .footer-bottom {
+    padding-bottom: calc(24px + var(--bottom-nav-height, 60px));
+  }
+}
+
 @media (max-width: 600px) {
   .footer-grid {
     grid-template-columns: 1fr;

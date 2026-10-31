@@ -184,13 +184,18 @@ export default function Shop() {
         </div>
 
         <div className="shop-layout">
+          {showFilters && (
+            <div className="filter-overlay" onClick={() => setShowFilters(false)} />
+          )}
           <aside className={`shop-filters ${showFilters ? 'filters-open' : ''}`}>
             <div className="filters-header">
-              <h3>Filters</h3>
+              <h3>Filters {activeFilterCount > 0 && `(${activeFilterCount})`}</h3>
               {activeFilterCount > 0 && (
                 <button className="clear-filters" onClick={clearFilters}>Clear All</button>
               )}
-              <button className="filters-close" onClick={() => setShowFilters(false)}><FiX /></button>
+              <button className="filters-close" onClick={() => setShowFilters(false)} aria-label="Close filters">
+                <FiX />
+              </button>
             </div>
 
             {/* Categories */}
@@ -262,6 +267,16 @@ export default function Shop() {
                   </button>
                 ))}
               </div>
+            </div>
+
+            <div className="mobile-filter-footer">
+              <button
+                className="btn btn-primary"
+                style={{ width: '100%' }}
+                onClick={() => setShowFilters(false)}
+              >
+                Show {filteredProducts.length} Results
+              </button>
             </div>
           </aside>
 

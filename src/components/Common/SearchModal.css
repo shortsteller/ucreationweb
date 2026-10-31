@@ -158,3 +158,20 @@
   font-size: 0.85rem;
   color: var(--color-text-muted);
 }
+
+@media (max-width: 600px) {
+  .search-modal-overlay {
+    padding-top: 0;
+  }
+  .search-modal {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+  }
+  .search-input-wrapper {
+    padding: 14px 16px;
+  }
+}

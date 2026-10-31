@@ -12,20 +12,33 @@ export default function ProductCard({ product }) {
   return (
     <div className="product-card">
       <div className="product-card-image">
-        <Link to={`/product/${product.id}`}>
+        <Link to={`/product/${product.id}`} className="product-image-link">
           <img src={product.images[0]} alt={product.name} loading="lazy" />
           {product.images[1] && (
             <img src={product.images[1]} alt={product.name} className="product-card-hover-img" loading="lazy" />
           )}
         </Link>
 
+        {/* Wishlist touch button (always easily tappable on tablet/mobile) */}
+        <button
+          className={`card-wishlist-touch-btn ${isInWishlist(product.id) ? 'active' : ''}`}
+          onClick={(e) => {
+            e.preventDefault()
+            toggleWishlist(product)
+          }}
+          aria-label="Toggle wishlist"
+        >
+          <FiHeart />
+        </button>
+
         <div className="product-card-badges">
           {product.isNew && <span className="badge badge-new">New</span>}
           {discount > 0 && <span className="badge badge-sale">-{discount}%</span>}
-          {product.isTrending && <span className="badge badge-trending">Trending</span>}
+          {product.isTrending && <span className="badge badge-trending">Hot</span>}
         </div>
 
-        <div className="product-card-actions">
+        {/* Desktop hover actions */}
+        <div className="product-card-actions desktop-card-actions">
           <button
             className={`card-action-btn ${isInWishlist(product.id) ? 'active' : ''}`}
             onClick={() => toggleWishlist(product)}
@@ -65,6 +78,15 @@ export default function ProductCard({ product }) {
           </div>
           <span className="review-count">({product.reviews})</span>
         </div>
+
+        {/* Mobile / Tablet Quick Add Button */}
+        <button
+          className="mobile-quick-add-btn"
+          onClick={() => addToCart(product)}
+          aria-label={`Add ${product.name} to cart`}
+        >
+          <FiShoppingBag /> Add to Cart
+        </button>
       </div>
     </div>
   )

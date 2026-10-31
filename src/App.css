@@ -2,9 +2,16 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
 }
 
 .main-content {
   flex: 1;
-  margin-top: var(--header-height);
+}
+
+/* On mobile, reserve space at bottom for sticky BottomNav */
+@media (max-width: 768px) {
+  .main-content {
+    padding-bottom: calc(var(--bottom-nav-height, 60px) + env(safe-area-inset-bottom, 0px));
+  }
 }
